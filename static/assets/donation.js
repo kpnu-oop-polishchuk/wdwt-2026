@@ -55,11 +55,28 @@ if (form && message) {
       message.textContent = 'Надсилаємо пожертву...';
       message.style.color = '#42557d';
 
-      setTimeout(() => {
-        message.textContent = `Дякуємо, ${donation.name}! Ми отримали ваш внесок у розмірі ${donation.amount} ${donation.currency}.`;
-        message.style.color = '#0b7a3a';
-        form.reset();
-      }, 1200);
+      fetch('/api/donate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(donation)
+      })
+        .then(async (response) => {
+          const result = await response.json();
+
+          if (!response.ok) {
+            throw new Error(result.message || 'Не вдалося надіслати пожертву.');
+          }
+
+          message.textContent = result.message;
+          message.style.color = '#0b7a3a';
+          form.reset();
+        })
+        .catch((error) => {
+          message.textContent = error.message;
+          message.style.color = '#a61b1b';
+        });
     } catch (error) {
       message.textContent = error.message;
       message.style.color = '#a61b1b';

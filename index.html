@@ -33,27 +33,41 @@
       <p><a class="button" href="program.html">Дивитися програму</a></p>
     </section>
 
-    <section>
-      <h2>Таймер до початку</h2>
-      <p><strong>Початок:</strong> <time datetime="2026-10-15T09:00">15 жовтня 2026, 09:00</time></p>
-      <dl>
-        <dt>Дні</dt>
-        <dd>28</dd>
-        <dt>Години</dt>
-        <dd>12</dd>
-        <dt>Хвилини</dt>
-        <dd>45</dd>
-      </dl>
+    <section data-toggle-panel>
+      <div class="section-header">
+        <h2>Таймер до початку</h2>
+        <button class="button toggle-btn" type="button" data-toggle-btn aria-expanded="true">Сховати</button>
+      </div>
+      <div class="section-body" data-toggle-body>
+        <p><strong>Початок:</strong> <time datetime="2026-10-15T09:00">15 жовтня 2026, 09:00</time></p>
+        <dl>
+          <dt>Дні</dt>
+          <dd>28</dd>
+          <dt>Години</dt>
+          <dd>12</dd>
+          <dt>Хвилини</dt>
+          <dd>45</dd>
+        </dl>
+      </div>
     </section>
 
-    <section>
-      <h2>Про подію</h2>
-      <p>На конференції зберемо експертів із розробки, бізнесу, освіти та уряду, щоб обговорити, як AI змінює світ.</p>
+    <section data-toggle-panel>
+      <div class="section-header">
+        <h2>Про подію</h2>
+        <button class="button toggle-btn" type="button" data-toggle-btn aria-expanded="true">Сховати</button>
+      </div>
+      <div class="section-body" data-toggle-body>
+        <p>На конференції зберемо експертів із розробки, бізнесу, освіти та уряду, щоб обговорити, як AI змінює світ.</p>
+      </div>
     </section>
 
-    <section class="plans-section">
-      <h2>Плани участі</h2>
-      <div class="plans-grid">
+    <section class="plans-section" data-toggle-panel>
+      <div class="section-header">
+        <h2>Плани участі</h2>
+        <button class="button toggle-btn" type="button" data-toggle-btn aria-expanded="true">Сховати</button>
+      </div>
+      <div class="section-body" data-toggle-body>
+        <div class="plans-grid">
         <article class="plan-card">
           <h3>Старт</h3>
           <p class="plan-price">₴1 500</p>
@@ -88,40 +102,46 @@
           <a class="button" href="#">Обрати</a>
         </article>
       </div>
+      </div>
     </section>
 
-    <section class="donation-section">
-      <h2>Підтримати конференцію</h2>
-      <form id="donation-form" novalidate>
-        <div class="form-grid">
+    <section class="donation-section" data-toggle-panel>
+      <div class="section-header">
+        <h2>Підтримати конференцію</h2>
+        <button class="button toggle-btn" type="button" data-toggle-btn aria-expanded="true">Сховати</button>
+      </div>
+      <div class="section-body" data-toggle-body>
+        <form id="donation-form" novalidate>
+          <div class="form-grid">
+            <label>
+              Ім’я
+              <input type="text" name="name" placeholder="Ваше ім’я">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="name@example.com">
+            </label>
+            <label>
+              Сума внеску
+              <input type="number" name="amount" min="1" step="1" placeholder="500">
+            </label>
+            <label>
+              Валюта
+              <select name="currency">
+                <option value="UAH">UAH</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </label>
+          </div>
           <label>
-            Ім’я
-            <input type="text" name="name" placeholder="Ваше ім’я">
+            Коментар
+            <textarea name="comment" rows="4" placeholder="Додайте короткий коментар"></textarea>
           </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="name@example.com">
-          </label>
-          <label>
-            Сума внеску
-            <input type="number" name="amount" min="1" step="1" placeholder="500">
-          </label>
-          <label>
-            Валюта
-            <select name="currency">
-              <option value="UAH">UAH</option>
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-            </select>
-          </label>
-        </div>
-        <label>
-          Коментар
-          <textarea name="comment" rows="4" placeholder="Додайте короткий коментар"></textarea>
-        </label>
-        <button class="button" type="submit">Підтвердити пожертву</button>
-        <p id="donation-message" class="donation-message" aria-live="polite"></p>
-      </form>
+          <button class="button" type="submit">Підтвердити пожертву</button>
+          <p id="donation-message" class="donation-message" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
   </main>
 

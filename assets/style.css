@@ -40,6 +40,17 @@ nav {
   flex-wrap: wrap;
 }
 
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-body[hidden] {
+  display: none;
+}
+
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

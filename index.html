@@ -89,6 +89,42 @@
         </article>
       </div>
     </section>
+
+    <section class="donation-section">
+      <h2>Підтримати конференцію</h2>
+      <form id="donation-form" novalidate>
+        <div class="form-grid">
+          <label>
+            Ім’я
+            <input type="text" name="name" placeholder="Ваше ім’я">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="name@example.com">
+          </label>
+          <label>
+            Сума внеску
+            <input type="number" name="amount" min="1" step="1" placeholder="500">
+          </label>
+          <label>
+            Валюта
+            <select name="currency">
+              <option value="UAH">UAH</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          Коментар
+          <textarea name="comment" rows="4" placeholder="Додайте короткий коментар"></textarea>
+        </label>
+        <button class="button" type="submit">Підтвердити пожертву</button>
+        <p id="donation-message" class="donation-message" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
+
+  <script src="assets/donation.js"></script>
 </body>
 </html>
